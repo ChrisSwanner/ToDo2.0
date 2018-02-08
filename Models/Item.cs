@@ -5,14 +5,26 @@ namespace Project.Models
   public class Item
   {
     private string _description;
+    private string _details;
     private int _id;
     private static List<Item> _instances = new List<Item> {};
 
-    public Item(string description)
+    public Item(string description, string details)
     {
       _description = description;
+      _details = details;
       _instances.Add(this);
       _id = _instances.Count;
+    }
+
+    public string GetDetails()
+    {
+      return _details;
+    }
+
+    public void SetDetails(string newDetails)
+    {
+      _details = newDetails;
     }
 
     public string GetDescription()

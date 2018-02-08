@@ -45,5 +45,9 @@ namespace Project.Models
 		{
   		_items.Add(item);
 		}
+		public static void ClearAll()
+    {
+      _instances.Clear();
+    }
   }
 }

@@ -21,20 +21,19 @@ namespace Project.Controllers
         }
 
 
-        [HttpPost("/category/{categoryId}/items/{id}")]
-        public ActionResult Details(int id)
+        [HttpGet("/category/{categoryId}/items/{id}")]
+        public ActionResult ContentsDetails(int categoryId, int id)
         {
+
+          Category category = Category.Find(categoryId);
           Item item = Item.Find(id);
-          Dictionary<string, object> model = new Dictionary<string, object>();
-          Category category = Category.Find(item.GetId());
-          model.Add("item", item);
-          model.Add("category", category);
-          return View();
+          return View(item);
         }
 
         [HttpPost("/items/delete")]
         public ActionResult DeleteAll()
         {
+          Category.ClearAll();
           Item.ClearAll();
           return View();
         }

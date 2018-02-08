@@ -47,11 +47,13 @@ namespace Project.Controllers
         Dictionary<string, object> model = new Dictionary<string, object>();
         Category foundCategory = Category.Find(Int32.Parse(Request.Form["category-id"]));
         string itemDescription = Request.Form["item-description"];
-        Item newItem = new Item(itemDescription);
+        string itemDetails = Request.Form["item-details"];
+        Item newItem = new Item(itemDescription, itemDetails);
         foundCategory.AddItem(newItem);
         List<Item> categoryItems = foundCategory.GetItems();
         model.Add("items", categoryItems);
         model.Add("category", foundCategory);
+        System.Console.WriteLine(itemDetails);
         return View("Details", model);
       }
     }
