@@ -9,17 +9,28 @@
   <body>
     <div class="container">
       <h3>Here are all the items in this category:</h3>
+      <hr class="style-two">
       <ol>
         @foreach (var item in @Model["items"])
         {
           <li><a href='/category/@Model["category"].GetId()/items/@item.GetId()'>@item.GetDescription()</a></li>
         }
       </ol>
-      <p><a href='/categories/@Model["category"].GetId()/items/new'>Add a new item</a></p>
-      <p><a href='/categories'>Return to category list</a></p>
-      <p><a href='/'>Return to Main Page</a></p>
+      <hr class="style-two">
+      <form class="inline" action='/categories/@Model["category"].GetId()/items/new' method="get">
+        <button class="btn btn-info"type="submit" name="button">Add an Item</button>
+      </form>
+      <form class="inline" action='/categories' method="get">
+        <button class="btn btn-info"type="submit" name="button">Return to Categories</button>
+      </form>
+      <form class="inline" action='/' method="get">
+        <button class="btn btn-info"type="submit" name="button">Return to Home</button>
+      </form>
+      <br>
+      <br>
       <form action="/items/delete" method="post">
-        <button type="submit" name="button">Clear All Items</button>
+        <button class="btn btn-danger"type="submit" name="button">Clear All Items</button>
+      </form>
     </div>
   </body>
 </html>

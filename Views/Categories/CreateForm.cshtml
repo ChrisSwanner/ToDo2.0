@@ -9,14 +9,18 @@
   <body>
     <div class="container">
       <h1>Add a category</h1>
-      <p>Add a category here:</p>
       <form action="/categories" method="post">
         <label for="category-name">Category name</label>
         <input id="category-name" name="category-name" type="text">
         <button type="submit">Add</button>
       </form>
-      <p><a href="/">Back home</a></p>
-      <p><a href="/categories">Back to categories.</a></p>
+      <hr class="style-two">
+      <form class="inline" action="/" method="get">
+        <button class="btn btn-danger" type="submit" name="button">Back Home</button>
+      </form>
+      <form class="inline" action="/categories" method="get">
+        <button class="btn btn-danger" type="submit" name="button">Back to Categories</button>
+      </form>
     </div>
   </body>
 </html>

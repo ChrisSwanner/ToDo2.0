@@ -9,15 +9,15 @@
   <body>
     <div class="container">
     <h1>To Do List</h1>
-    <h3>Add a new item:</h3>
-    <h1>Add a new item to @Model.GetName()</h1>
+    <hr class="style-two">
+    <h3>Add a new item to @Model.GetName()</h3>
     <form action='/items' method='post'>
       <input id='category-id' name='category-id' type='hidden' value='@Model.GetId()'>
       <label for='item-description'>Item description</label>
       <input id='item-description' name='item-description' type='text'>
       <label for='item-details'>Item Details</label>
       <input id='item-details' name='item-details' type='text'>
-      <button type='submit'>Add item</button>
+      <button class="btn btn-info" type='submit'>Add item</button>
     </form>
   </div>
 

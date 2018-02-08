@@ -7,6 +7,14 @@
     <title>To Do List</title>
   </head>
   <body>
+    <div class="container">
       <h1>@Model.GetDetails()</h1>
+      <form class="inline" action='/categories' method="get">
+        <button class="btn btn-info"type="submit" name="button">Return to Categories</button>
+      </form>
+      <form class="inline" action='/' method="get">
+        <button class="btn btn-info"type="submit" name="button">Return to Home</button>
+      </form>
+    </div>
   </body>
 </html>
